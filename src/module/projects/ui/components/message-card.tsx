@@ -19,22 +19,22 @@ const UserMessgae = ({ content }: UserMessageProps) => {
   );
 };
 
-interface FragementCardProps {
+interface FragmentCardProps {
   fragment: Fragment;
-  isActiveFragement: boolean;
+  isActiveFragment: boolean;
   onFragmentClick: (fragment: Fragment) => void;
 }
 
-const FragementCard = ({
+const FragmentCard = ({
   fragment,
-  isActiveFragement,
+  isActiveFragment,
   onFragmentClick,
-}: FragementCardProps) => {
+}: FragmentCardProps) => {
   return (
     <button
       className={cn(
         "flex items-start text-start gap-2 border rounded-lg bg-muted w-fit p-3 hover:bg-secondary transition-colors",
-        isActiveFragement &&
+        isActiveFragment &&
           "bg-primary text-primary-foreground border-primary hover:bg-primary"
       )}
       onClick={() => onFragmentClick(fragment)}
@@ -53,11 +53,11 @@ const FragementCard = ({
   );
 };
 
-interface AssistanrMessageProps {
+interface AssistantMessageProps {
   content: string;
   fragment: Fragment | null;
   createdAt: Date;
-  isActiveFragement: boolean;
+  isActiveFragment: boolean;
   onFragmentClick: (fragment: Fragment) => void;
   type: MessageType;
 }
@@ -66,10 +66,10 @@ const AssistanrMessgae = ({
   content,
   fragment,
   createdAt,
-  isActiveFragement,
+  isActiveFragment,
   onFragmentClick,
   type,
-}: AssistanrMessageProps) => {
+}: AssistantMessageProps) => {
   return (
     <div
       className={cn(
@@ -92,9 +92,9 @@ const AssistanrMessgae = ({
       </div>
       <div className="flex flex-col gap-y-4 pl-8.5">{content}</div>
       {fragment && type === "RESULT" && (
-        <FragementCard
+        <FragmentCard
           fragment={fragment}
-          isActiveFragement={isActiveFragement}
+          isActiveFragment={isActiveFragment}
           onFragmentClick={onFragmentClick}
         />
       )}
@@ -107,7 +107,7 @@ interface Props {
   role: MessageRole;
   fragment: Fragment | null;
   createdAt: Date;
-  isActiveFragent: boolean;
+  isActiveFragment: boolean;
   onFragmentClick: (fragment: Fragment) => void;
   type: MessageType;
 }
@@ -117,7 +117,7 @@ export const MessageCard = ({
   role,
   fragment,
   createdAt,
-  isActiveFragent,
+  isActiveFragment,
   onFragmentClick,
   type,
 }: Props) => {
@@ -127,7 +127,7 @@ export const MessageCard = ({
         content={content}
         fragment={fragment}
         createdAt={createdAt}
-        isActiveFragement={isActiveFragent}
+        isActiveFragment={isActiveFragment}
         onFragmentClick={onFragmentClick}
         type={type}
       />
