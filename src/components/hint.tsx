@@ -11,7 +11,7 @@ interface HintProps {
   children: React.ReactNode;
   text: string;
   side: "top" | "right" | "bottom" | "left";
-  align: "start" | "center" | "end";
+  align?: "start" | "center" | "end";
 }
 
 export const Hint = ({
