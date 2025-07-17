@@ -15,6 +15,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
+import { UserControl } from "@/components/user-control";
 interface Props {
   projectId: string;
 }
@@ -65,6 +66,7 @@ export const ProjectView = ({ projectId }: Props) => {
                     Upgrade
                   </Link>
                 </Button>
+                <UserControl />
               </div>
             </div>
             <TabsContent value="preview">
