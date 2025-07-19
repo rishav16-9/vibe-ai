@@ -1,4 +1,4 @@
-import { getUsageStatus } from "@/lib/usgae";
+import { getUsageStatus } from "@/lib/usage";
 import { createTRPCRouter, protectedProcedure } from "@/trpc/init";
 
 export const usageRouter = createTRPCRouter({

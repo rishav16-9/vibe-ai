@@ -4,7 +4,7 @@ import { inngest } from "@/inngest/client";
 import { generateSlug } from "random-word-slugs";
 import { protectedProcedure, createTRPCRouter } from "@/trpc/init";
 import { TRPCError } from "@trpc/server";
-import { consumeCredits } from "@/lib/usgae";
+import { consumeCredits } from "@/lib/usage";
 
 export const projectsRouter = createTRPCRouter({
   getOne: protectedProcedure
