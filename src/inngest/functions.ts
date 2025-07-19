@@ -194,7 +194,7 @@ export const codeAgentFunction = inngest.createFunction(
     });
     const result = await network.run(event.data.value, { state: state });
     const fragmentTitleGenerator = createAgent<AgentState>({
-      name: "fragement-title-generator",
+      name: "fragment-title-generator",
       description: "A fragment title generator",
       system: FRAGMENT_TITLE_PROMPT,
       model: openai({
@@ -214,7 +214,7 @@ export const codeAgentFunction = inngest.createFunction(
     const { output: fragmentTitleOutput } = await fragmentTitleGenerator.run(
       result.state.data.summary
     );
-    const { output: responnseOutput } = await responseGenerator.run(
+    const { output: responseOutput } = await responseGenerator.run(
       result.state.data.summary
     );
 
@@ -240,7 +240,7 @@ export const codeAgentFunction = inngest.createFunction(
       }
       return await prisma.message.create({
         data: {
-          content: parseAgentOutput(responnseOutput),
+          content: parseAgentOutput(responseOutput),
           role: "ASSISTANT",
           type: "RESULT",
           projectId: event.data.projectId,
